@@ -53,11 +53,13 @@
 <body>
     <h1>Loan Default Rate Prediction</h1>
     <small style="display: block; text-align: center; font-size: 14px; color: gray;">
-        Fan Bu (fbxxxx); Zexing Hu (zh2585)
+        Team Members: Fan Bu (fbxxxx); Zexing Hu (zh2585)
     </small>
     <div class="form-container">
+
+        <!--Input values for the model.-->
         <form action="{{ url_for('predict') }}" method="post">
-            <!-- Numeric Fields -->
+
             <label>Age:</label>
             <input type="number" name="Age" placeholder="Enter Age" min="0" required>
             
@@ -85,9 +87,9 @@
             <label>DTI Ratio:</label>
             <input type="number" step="0.01" name="DTIRatio" placeholder="Debt-to-Income Ratio" min="0.01" required>
 
-            <!-- Categorical Fields -->
-            <!-- Education 4 ["Bachelor's" "Master's" 'High School' 'PhD'] -->>
+            
             <label>Education:</label>
+            <!-- Education 4 ["Bachelor's" "Master's" 'High School' 'PhD'] -->
             <select name="Education" required>
                 <option value="" disabled selected>Select Education Level</option>
                 <option value="High School">High School</option>
@@ -126,7 +128,6 @@
                 <option value="Education">Education</option>
             </select>
 
-            <!-- Boolean Fields -->
             <label>Has Mortgage?</label>
             <select name="HasMortgage" required>
                 <option value="1">Yes</option>
@@ -145,11 +146,10 @@
                 <option value="0">No</option>
             </select>
 
-            <!-- Submit Button -->
             <button type="submit">Predict Loan Default</button>
         </form>
     </div>
-    <!-- Prediction Display -->
+    <!-- Show Output Here -->
     {% if prediction_text %}
     <h2 style="text-align: center; color: green;">
         {{ prediction_text }}

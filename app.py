@@ -8,7 +8,6 @@ app = Flask(__name__)
 # Load the trained model
 model = joblib.load("model.pkl")
 
-
 # route to display the home page
 @app.route('/',methods=['GET']) 
 def homePage():
@@ -16,7 +15,7 @@ def homePage():
 
 @app.route('/predict', methods=['POST', 'GET'])
 def predict():
-    prediction_text = None
+    prediction_text = None # To show predicted result
 
     try:
         age = int(request.form['Age'])
@@ -36,13 +35,12 @@ def predict():
         has_dependents = int(request.form['HasDependents']) #1 Yes, 0 No
         has_cosigner = int(request.form['HasCoSigner']) #1 Yes, 0 No
 
-        # For categorical 
+        # One-hot encoded for categorical --> Make sure to match with the model
         education_mapping = {"Bachelor's": 0, 'High School': 1, "Master's": 2, 'PhD': 3}
         employment_mapping = {'Full-time': 0, 'Part-time': 1, 'Self-employed': 2,'Unemployed': 3}
         marital_mapping = {'Divorced': 0, 'Married': 1, 'Single': 2}
         loan_purpose_mapping = {'Auto': 0, 'Business': 1, 'Education': 2, 'Home': 3, 'Other': 4}
 
-        # One-hot encoded 
         education_encoded = education_mapping[education]
         employment_encoded = employment_mapping[employment_type]
         marital_encoded = marital_mapping[marital_status]
@@ -56,7 +54,7 @@ def predict():
 
     
         # Predict Result 
-        prediction = model.predict(features)[0]
+        prediction = model.predict(features)[0] 
 
         if prediction == 0:
             prediction_text = f"Predicted Loan Default: No."
