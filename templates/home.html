@@ -52,7 +52,9 @@
 </head>
 <body>
     <h1>Loan Default Rate Prediction</h1>
-    <small>Fan Bu (fbxxxx); Zexing Hu (zh2585)</small>
+    <small style="display: block; text-align: center; font-size: 14px; color: gray;">
+        Fan Bu (fbxxxx); Zexing Hu (zh2585)
+    </small>
     <div class="form-container">
         <form action="{{ url_for('predict') }}" method="post">
             <!-- Numeric Fields -->
@@ -147,6 +149,11 @@
             <button type="submit">Predict Loan Default</button>
         </form>
     </div>
-    {{prediction_text}}
+    <!-- Prediction Display -->
+    {% if prediction_text %}
+    <h2 style="text-align: center; color: green;">
+        {{ prediction_text }}
+    </h2>
+    {% endif %}
 </body>
 </html>
