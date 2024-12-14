@@ -1,5 +1,5 @@
 ## Columbia University | 2024 Fall IEOR 4526 Cloud Analytic | Final Project
-Team Members: Fan Bu (fbxxxx); Zexing Hu (zh2585)
+Team Members: Fan Bu (fb2635); Zexing Hu (zh2585)
 
 ### Run the program:
 1. Build the image
