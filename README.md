@@ -1,6 +1,8 @@
 ## Columbia University | 2024 Fall IEOR 4526 Cloud Analytic | Final Project
 Team Members: Fan Bu (fb2635); Zexing Hu (zh2585)
 
+URL: https://loanapprovalimg-560365338512.us-east4.run.app
+
 ### Run the program:
 1. Build the image
 ```docker build -t loan-predictor .```
