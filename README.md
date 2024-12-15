@@ -2,6 +2,7 @@
 Team Members: Fan Bu (fb2635); Zexing Hu (zh2585)
 
 URL: https://loanapprovalimg-560365338512.us-east4.run.app
+Link Expires: 12/31/2024
 
 ### Run the program:
 1. Build the image
